@@ -1,20 +1,21 @@
 <?php
 
-// is er een POST request gedaan.
+// is the request of type POST?
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // haal bestaande berichten op
+    // retrieve json data
     $jsonData = file_get_contents('jsondata.json');
 
+    // decode to associative array
     $data = json_decode($jsonData, true);
 
-    // var_dump($data);
-
-
+    // data from the form
     $name = $_POST['name'];
     $message = $_POST['message'];
-    $dateTime = time(); // datetime is nu gelijk aan de huidige unix timestamp
+    // UNIX timestamp of current time
+    $dateTime = time();
 
+    // add new element to the array
     $data[] = 
         [
             "name" => $name,
@@ -22,11 +23,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             "timeStamp" => $dateTime
         ];
 
+    // encode assoc array to JSON.
     $jsonData = json_encode($data, JSON_PRETTY_PRINT);
 
+    // save file
     file_put_contents('jsondata.json', $jsonData);
 
-
-
+    // echo new contents of file.
     echo '<pre>' . $jsonData . '</pre>';
 }

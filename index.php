@@ -1,3 +1,7 @@
+<?php
+    include 'get_messages.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,9 +20,7 @@
         <input type="submit" value="verstuur informatie" name="submit">
     </form>
 
-    <?php
-    include 'get_messages.php';
-    echo $htmlString;
+    <?= $htmlString;
     ?>
 </body>
 </html>

@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Peter",
+        "message": "Dit is het eerste bericht",
+        "timeStamp": 1710152642
+    },
+    {
+        "name": "Rick",
+        "message": "Dit is het tweede bericht",
+        "timeStamp": 1710152944
+    },
+    {
+        "name": "Mark",
+        "message": "Dit is het derde bericht",
+        "timeStamp": 1710152947
+    },
+    {
+        "name": "Michiel",
+        "message": "Dit is het vierde bericht",
+        "timeStamp": 1710152957
+    }
+]
